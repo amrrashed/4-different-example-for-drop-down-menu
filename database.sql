@@ -1,0 +1,55 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+
+CREATE TABLE IF NOT EXISTS `month` (
+`num` int(20) NOT NULL,
+  `name` varchar(50) NOT NULL
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+
+INSERT INTO `month` (`num`, `name`) VALUES
+(1, 'محرم'),
+(2, 'صفر'),
+(3, 'ربيع أول'),
+(4, 'ربيع ثاني'),
+(5, 'جمادي أول'),
+(6, 'جمادي ثاني'),
+(7, 'رجب'),
+(8, 'شعبان'),
+(9, 'رمضان'),
+(10, 'شوال'),
+(11, 'ذو القعدة'),
+(12, 'ذو الحجة');
+
+CREATE TABLE IF NOT EXISTS `test` (
+`autonum` int(50) NOT NULL,
+  `id` int(50) NOT NULL,
+  `year` int(50) NOT NULL
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+INSERT INTO `test` (`autonum`, `id`, `year`) VALUES
+(1, 1, 1990),
+(2, 2, 1440),
+(3, 1, 1991),
+(4, 2, 1441);
+
+
+ALTER TABLE `month`
+ ADD PRIMARY KEY (`num`);
+
+ALTER TABLE `test`
+ ADD PRIMARY KEY (`autonum`);
+
+
+ALTER TABLE `month`
+MODIFY `num` int(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+ALTER TABLE `test`
+MODIFY `autonum` int(50) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
